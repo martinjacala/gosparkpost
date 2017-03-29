@@ -72,7 +72,7 @@ func ParseRecipients(recips interface{}) (ra *[]Recipient, err error) {
 		return
 
 	case map[string]string:
-		for k, _ := range rVal {
+		for k := range rVal {
 			if strings.EqualFold(k, "list_id") {
 				return
 			}
@@ -137,7 +137,7 @@ func ParseContent(content interface{}) (err error) {
 		return fmt.Errorf("Transmission.Content objects must contain a key `template_id`")
 
 	case map[string]string:
-		for k, _ := range rVal {
+		for k := range rVal {
 			if strings.EqualFold(k, "template_id") {
 				return nil
 			}
